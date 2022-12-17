@@ -1,0 +1,103 @@
+-- GUI to Lua
+-----
+-- Version: 2.0.
+-- Made by chrisopdemobiel.
+
+-- Instances:
+
+local ExtensionInstaller = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Code = Instance.new("TextLabel")
+local Downloading = Instance.new("TextLabel")
+local Verify = Instance.new("TextLabel")
+local Patience = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+
+--Properties:
+
+ExtensionInstaller.Name = "Extension-Installer"
+ExtensionInstaller.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ExtensionInstaller.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ExtensionInstaller
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.263120055, 0, 0.22115384, 0)
+Main.Size = UDim2.new(0, 658, 0, 347)
+
+Code.Name = "Code"
+Code.Parent = Main
+Code.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Code.Position = UDim2.new(0.348024309, 0, 0.495677233, 0)
+Code.Size = UDim2.new(0, 200, 0, 50)
+Code.Visible = false
+Code.Font = Enum.Font.SourceSans
+Code.Text = ""
+Code.TextColor3 = Color3.fromRGB(0, 0, 0)
+Code.TextSize = 14.000
+
+Downloading.Name = "Downloading"
+Downloading.Parent = Main
+Downloading.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Downloading.Position = UDim2.new(0.00151975686, 0, 0.253602326, 0)
+Downloading.Size = UDim2.new(0, 658, 0, 50)
+Downloading.Font = Enum.Font.SourceSans
+Downloading.Text = "Downloading Extension..."
+Downloading.TextColor3 = Color3.fromRGB(0, 0, 0)
+Downloading.TextScaled = true
+Downloading.TextSize = 14.000
+Downloading.TextWrapped = true
+
+Verify.Name = "Verify"
+Verify.Parent = Main
+Verify.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Verify.Position = UDim2.new(0, 0, 0.397694528, 0)
+Verify.Size = UDim2.new(0, 658, 0, 50)
+Verify.Font = Enum.Font.SourceSans
+Verify.Text = "You May Be Asked To Verify That The Code Is Safe."
+Verify.TextColor3 = Color3.fromRGB(0, 0, 0)
+Verify.TextScaled = true
+Verify.TextSize = 14.000
+Verify.TextWrapped = true
+
+Patience.Name = "Patience"
+Patience.Parent = Main
+Patience.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Patience.Position = UDim2.new(0.00151975686, 0, 0.54178673, 0)
+Patience.Size = UDim2.new(0, 657, 0, 159)
+Patience.Font = Enum.Font.SourceSans
+Patience.Text = "Please Wait Patiently..."
+Patience.TextColor3 = Color3.fromRGB(0, 0, 0)
+Patience.TextScaled = true
+Patience.TextSize = 14.000
+Patience.TextWrapped = true
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.Position = UDim2.new(0.00151975686, 0, -0.00181962154, 0)
+Title.Size = UDim2.new(0, 657, 0, 89)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Figit Studio"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+-- Scripts:
+
+local function BPABMK_fake_script() -- Main.Fetch-Data 
+	local script = Instance.new('LocalScript', Main)
+
+	wait(7)
+	Downloading.Text = "Unable To Get Download Data From Figit Server"
+	wait(6)
+	Patience.Text = "Unable To Get Waiting Times From Extension Due To Figit Studio Not Able To Get Waiting Times From Data Due To Data Not Being Availible"
+	wait(8)
+	Verify.Text = "Unable To Check For Verifications Due To Figit Studio Not Being Able To Check Verifications From Data Due To Data Not Being Availible"
+	wait(12)
+	Title.Text = "Figit Studio Has Failed To Find Data So, Figit Studio Extension Loader Has To Quit..."
+	wait(5)
+	ExtensionInstaller:Destroy()
+end
+coroutine.wrap(BPABMK_fake_script)()
