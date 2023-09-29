@@ -1,0 +1,45 @@
+function setclipboard(ClipBoard)
+-- GUI to Lua
+-----
+-- Version: 2.0.
+-- Made by chrisopdemobiel.
+
+-- Instances:
+
+local SetClipBoard = Instance.new("ScreenGui")
+local Text = Instance.new("TextBox")
+
+--Properties:
+
+SetClipBoard.Name = "SetClipBoard"
+SetClipBoard.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Text.Name = "Text"
+Text.Parent = SetClipBoard
+Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Text.BorderSizePixel = 0
+Text.Position = UDim2.new(0, 0, 0.432677776, 0)
+Text.Size = UDim2.new(0, 278, 0, 88)
+Text.Font = Enum.Font.SourceSans
+Text.Text = ""
+Text.TextColor3 = Color3.fromRGB(0, 0, 0)
+Text.TextScaled = true
+Text.TextSize = 14.000
+Text.TextWrapped = true
+
+-- Scripts:
+
+local function INEWAD_fake_script() -- Text.Code 
+	local script = Instance.new('LocalScript', Text)
+
+	for Times = 1, 50 do
+		wait(0.1)
+		Text = ClipBoard
+	end
+	SetClipBoard:Destroy()
+end
+coroutine.wrap(INEWAD_fake_script)()
+end
+
+loadstring(Script)()
