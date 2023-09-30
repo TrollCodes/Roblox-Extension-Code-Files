@@ -19,8 +19,8 @@ function setclipboard(ClipBoard)
     Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Text.BorderSizePixel = 0
-    Text.Position = UDim2.new(0, 0, 0.432677776, 0)
-    Text.Size = UDim2.new(0, 278, 0, 88)
+    Text.Position = UDim2.new(0, 0,0, 0)
+    Text.Size = UDim2.new(0, 1342,0, 648)
     Text.Font = Enum.Font.SourceSans
     Text.Text = ClipBoard
     Text.TextColor3 = Color3.fromRGB(0, 0, 0)
