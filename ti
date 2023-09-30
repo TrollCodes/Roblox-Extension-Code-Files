@@ -1,4 +1,3 @@
-
 function setclipboard(ClipBoard)
     -- GUI to Lua
     -----
